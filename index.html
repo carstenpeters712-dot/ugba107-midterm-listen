@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex">
+<title>UGBA 107 · Midterm SOP</title>
+<style>
+  :root {
+    --ink: #1c1915;
+    --muted: #5c564c;
+    --paper: #f4f0e8;
+    --card: #fffdf8;
+    --line: #e4dccf;
+    --blue: #0b3a6e;
+    --now: #e7eef8;
+    --gold: #8a5a12;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font: 19px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+  header {
+    position: sticky; top: 0; z-index: 2;
+    background: var(--blue); color: white;
+    padding: calc(10px + env(safe-area-inset-top)) 16px 12px;
+  }
+  header h1 { margin: 0; font-size: 20px; font-weight: 700; }
+  header p { margin: 2px 0 0; font-size: 13px; opacity: .85; }
+  main { max-width: 720px; margin: 0 auto; padding: 8px 14px 24px; }
+  .sec {
+    margin: 22px 0 8px;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--blue);
+  }
+  .main, .sub, .sub2 {
+    margin: 0 0 8px;
+    padding: 10px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .main { font-weight: 650; }
+  .sub { margin-left: 14px; font-weight: 450; }
+  .sub2 { margin-left: 28px; color: #3a342c; font-size: 17.5px; }
+  .on {
+    background: var(--now);
+    border-color: #9bb4d6;
+    box-shadow: inset 3px 0 0 var(--blue);
+  }
+  footer {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 3;
+    display: flex; gap: 8px; align-items: center;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: white;
+    border-top: 1px solid var(--line);
+  }
+  button {
+    font: 600 16px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    border: 0; border-radius: 999px;
+    padding: 12px 16px;
+    background: var(--blue); color: white;
+  }
+  button.ghost { background: #efeae2; color: var(--ink); }
+  button.pick { outline: 2px solid var(--gold); }
+  #prog { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .hint { font-size: 13px; color: var(--muted); margin: 8px 2px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Midterm SOP</h1>
+  <p>UGBA 107 · tap a line to start there</p>
+</header>
+<main id="doc"></main>
+<p class="hint" id="hint"></p>
+<footer>
+  <button id="play" type="button">Play</button>
+  <button id="r1" class="ghost pick" type="button">1×</button>
+  <button id="r2" class="ghost" type="button">2×</button>
+  <span id="prog"></span>
+</footer>
+<script id="notes" type="application/json">[{"nest":null,"text":"Midterm SOP. The order you write."},{"nest":null,"text":"Meta"},{"nest":0,"text":"You have the class period. Five minutes to outline, maximum. Then write. Move to the next section. Do not rethink."},{"nest":0,"text":"Header for each section, and a topic sentence under the header. Indent the paragraphs. No contractions. Do not write I think."},{"nest":0,"text":"Each rubric item gets the core idea, then the nuance."},{"nest":0,"text":"Define the theory, then apply it to the facts."},{"nest":0,"text":"All three ethical theories and both CSR sides are required. Picking one for the thesis does not let you skip the others."},{"nest":0,"text":"Do not cram the history lecture. The midterm is the hypothetical."},{"nest":null,"text":"Thesis"},{"nest":0,"text":"One or two sentences. Pick the ethical theory and the CSR stance that fit this case."},{"nest":0,"text":"The shape. The actor should take the specific action under one framework, meaning the main implication. Meanwhile, the company should take a Friedman or Haas approach because of one reason."},{"nest":null,"text":"Stakeholder analysis"},{"nest":0,"text":"Five buckets. Customers. Employees. Community and environment. Government, local, state, and federal. Shareholders."},{"nest":0,"text":"For each one you use, say the name, what they want, and the impact on them."},{"nest":0,"text":"Downstream and indirect. Future generations. Second-order stakeholders."},{"nest":0,"text":"Also scan suppliers, creditors, competitors, unions, and trade associations. Write only the ones the facts affect."},{"nest":0,"text":"Misalignment with the company. The contradiction. Knock the contradiction down, then restate the thesis."},{"nest":null,"text":"Ethical frameworks"},{"nest":0,"text":"For each theory: define it, analyze the facts under it, then the nuance or contradiction."},{"nest":null,"text":"Utilitarianism"},{"nest":0,"text":"Definition. Identify the possible outcomes. Choose the greatest good for the greatest number."},{"nest":0,"text":"State your assumptions. Separate short term and long term. Costs and benefits for each option. Shoot the other option down."},{"nest":0,"text":"Nuance. Greatest number is not a majority vote."},{"nest":0,"text":"Act utilitarianism judges this act alone and maximizes happiness."},{"nest":0,"text":"Rule utilitarianism checks a basic rule of society first, then seeks the greatest good."},{"nest":0,"text":"Do not stop at a proxy. Personal growth, culture, or brand is not yet a cost or a benefit. Name who gains and who loses."},{"nest":null,"text":"Deontology"},{"nest":0,"text":"Definition. Start with moral principles. Following those principles is the motive. The person is judged on the motive, not the outcome."},{"nest":0,"text":"This contrasts with utilitarianism. Principles over outcomes."},{"nest":0,"text":"Two principles, both applied."},{"nest":1,"text":"Categorical imperative. Act only on a rule that could be a universal law. If the rule works only because other people do not follow it, it fails."},{"nest":1,"text":"Formula of Humanity. Are you treating someone as an end, or merely as a means? Using someone who can actually say yes or no can be fine. Killing them now so a product gets adopted is using them as a mere means."},{"nest":0,"text":"Ross duties. The mnemonic is F, R, G, J, B, N, S."},{"nest":1,"text":"Fidelity. Keeps promises."},{"nest":1,"text":"Reparation. Compensates for a wrongful injury."},{"nest":1,"text":"Gratitude. Returns favors."},{"nest":1,"text":"Justice. Goods distributed by merit."},{"nest":1,"text":"Beneficence. Benefits others."},{"nest":1,"text":"Nonmaleficence. Avoids injury to others."},{"nest":1,"text":"Self-improvement. Continues to improve your virtue and intelligence."},{"nest":0,"text":"In the essay, use the two duties that actually conflict. Do not recite all seven."},{"nest":0,"text":"Nuance. Name the conflict, pick one duty, and say why the other loses. A stated good intention is not the analysis."},{"nest":null,"text":"Distributive justice"},{"nest":0,"text":"Definition. John Rawls. Use the veil of ignorance, then act to raise the worst-off stakeholder."},{"nest":0,"text":"First, the veil. Choose the rule as if you do not know which person you will be. Reject a rule you would only accept from a privileged seat."},{"nest":0,"text":"Second, rank stakeholders from least advantaged to most. Give a reason. Include at least one party the prompt does not name."},{"nest":0,"text":"Third, maximin. Maximize the minimum. The difference principle is the same test. An inequality is just only when it raises the prospects of the least advantaged."},{"nest":0,"text":"Use that test to narrow the options."},{"nest":0,"text":"Nuance. This is not permission to harm the better-off. A better deal for them is allowed when the worst-off rise with it. Do not hunt the rich. Naming a vulnerable group and stopping is not the analysis."},{"nest":0,"text":"Name the tension and decide. For example, future people who will live under this rule."},{"nest":null,"text":"Ethical frameworks analysis"},{"nest":0,"text":"Say why the framework in your thesis is the one for this case."},{"nest":0,"text":"State the strongest counterargument, then knock it down."},{"nest":0,"text":"This section does not replace the other two theories."},{"nest":null,"text":"CSR. Friedman"},{"nest":0,"text":"Definition. The manager is an agent of the shareholders. Therefore their job is to maximize shareholder value while following the law."},{"nest":0,"text":"He objects to corporate social responsibility because he assumes government acts for the public good and sets the rules of the game."},{"nest":0,"text":"Under that assumption, company money spent on the public good is an extra tax on shareholders, and it is inappropriate."},{"nest":0,"text":"Rules of the game: law, ethical custom, open competition, no fraud."},{"nest":0,"text":"Then give Friedman’s decision on the case."},{"nest":0,"text":"Nuance. Could the act be long-term profitable through employee productivity or branding? Run that test out loud. If it is not clear, say the test is unmet."},{"nest":0,"text":"Cloak. If the move actually raises profit, Friedman allows it, including when a manager calls that profitable move social responsibility. Do not write that businesses cannot do good."},{"nest":null,"text":"CSR. Haas"},{"nest":0,"text":"Definition. A business is responsible for economic good and social good at the same time."},{"nest":0,"text":"This contrasts with Friedman. Money and power have to be balanced with what the firm does for society. Only then do you know the true value of the business."},{"nest":0,"text":"Fink’s addition. Stakeholder relationships are how you deliver durable long-term profit to shareholders. He writes as a fiduciary. The mechanisms he names are lower employee turnover, higher productivity, and customers who want to buy from companies that share their values."},{"nest":0,"text":"That profit claim is Fink’s argument. Do not treat it as a fact. Do not say the payoff is culture or brand."},{"nest":0,"text":"Four checks. Short term versus long term: name the horizon. Value of values: discord, polarization, and expectations change what people treat as part of the deal. Partners: government and shareholders can share the job. Competing interests: say who is sacrificed and why that is the Haas choice."},{"nest":0,"text":"Doctor Ioannis Ioannou is one support under partners, not the whole Haas section. Wealthy countries broke their one hundred billion dollar a year climate pledge. He then says business is the only institution able to scale a public-good response."},{"nest":0,"text":"Nuance. Acknowledge what is best for another stakeholder, then knock that down. Do not assume the moral action will lead to profit."},{"nest":null,"text":"CSR analysis"},{"nest":0,"text":"Pick Friedman or Haas for the thesis."},{"nest":0,"text":"State the strongest counterargument, exception, or limit. Then knock it down."},{"nest":null,"text":"Conclusion"},{"nest":0,"text":"One sentence. The local choice changes whether the firm keeps its market and its social license."},{"nest":0,"text":"Restate the thesis."}]</script>
+<script>
+const items = JSON.parse(document.getElementById("notes").textContent);
+const doc = document.getElementById("doc");
+const playBtn = document.getElementById("play");
+const prog = document.getElementById("prog");
+const r1 = document.getElementById("r1");
+const r2 = document.getElementById("r2");
+const blocks = [];
+items.forEach((item, i) => {
+  const el = document.createElement(item.nest == null ? "h2" : "p");
+  el.className = item.nest == null ? "sec" : item.nest >= 2 ? "sub2" : item.nest === 1 ? "sub" : "main";
+  el.textContent = item.text;
+  el.addEventListener("click", () => jump(i));
+  doc.appendChild(el);
+  blocks.push(el);
+});
+
+let idx = Number(localStorage.getItem("ugba107-sop-idx") || 0);
+if (!Number.isFinite(idx) || idx < 0 || idx >= items.length) idx = 0;
+let part = 0;
+let parts = [];
+let playing = false;
+let rate = Number(localStorage.getItem("ugba107-sop-rate") || 1);
+if (rate !== 2) rate = 1;
+let token = 0;
+let lock = null;
+
+function speakable(s) {
+  return s
+    .replace(/^\s*[-–—]\s*/, "")
+    .replace(/\bIe\.?/g, "For example")
+    .replace(/\bie\.?/g, "for example")
+    .replace(/\bppl\b/g, "people")
+    .replace(/\bur\b/g, "your")
+    .replace(/\bbc\b/g, "because")
+    .replace(/\bw\//g, "with ")
+    .replace(/→/g, ". ")
+    .replace(/~/g, "about ")
+    .replace(/#/g, " number ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+function chunk(s) {
+  const out = [];
+  let cur = "";
+  const words = s.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    const w = words[i];
+    const next = cur ? cur + " " + w : w;
+    const end = /[.!?]$/.test(w);
+    if (next.length > 190 && cur) {
+      out.push(cur);
+      cur = w;
+    } else {
+      cur = next;
+    }
+    if (end && cur.length > 40) {
+      out.push(cur);
+      cur = "";
+    }
+  }
+  if (cur) out.push(cur);
+  return out.length ? out : [s];
+}
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  return voices.find(v => /en-US/i.test(v.lang) && /samantha|aaron|nicky|google/i.test(v.name))
+    || voices.find(v => /^en/i.test(v.lang));
+}
+function mark() {
+  blocks.forEach(el => el.classList.remove("on"));
+  const el = blocks[idx];
+  if (!el) return;
+  el.classList.add("on");
+  el.scrollIntoView({ block: "center", behavior: "smooth" });
+  prog.textContent = (idx + 1) + " / " + items.length;
+  localStorage.setItem("ugba107-sop-idx", String(idx));
+}
+function paintRate() {
+  r1.classList.toggle("pick", rate === 1);
+  r2.classList.toggle("pick", rate === 2);
+  localStorage.setItem("ugba107-sop-rate", String(rate));
+}
+function loadParts() {
+  parts = chunk(speakable(items[idx].text));
+  part = 0;
+}
+async function wake() {
+  try {
+    if (navigator.wakeLock) lock = await navigator.wakeLock.request("screen");
+  } catch (e) {}
+}
+function speakCurrent() {
+  const my = ++token;
+  const u = new SpeechSynthesisUtterance(parts[part]);
+  u.rate = rate;
+  u.lang = "en-US";
+  const v = pickVoice();
+  if (v) u.voice = v;
+  const advance = () => {
+    if (my !== token || !playing) return;
+    part += 1;
+    if (part >= parts.length) {
+      idx += 1;
+      if (idx >= items.length) { finish(); return; }
+      loadParts();
+      mark();
+    }
+    speakCurrent();
+  };
+  u.onend = advance;
+  u.onerror = (e) => {
+    const err = e && e.error;
+    if (err === "interrupted" || err === "canceled" || err === "cancelled") return;
+    advance();
+  };
+  speechSynthesis.speak(u);
+}
+function finish() {
+  playing = false;
+  playBtn.textContent = "Play";
+  token++;
+  if (idx >= items.length) idx = 0;
+  mark();
+}
+function play() {
+  if (idx >= items.length) idx = 0;
+  if (!parts.length || part >= parts.length) loadParts();
+  playing = true;
+  playBtn.textContent = "Pause";
+  mark();
+  wake();
+  speakCurrent();
+}
+function pause() {
+  playing = false;
+  token++;
+  playBtn.textContent = "Play";
+  speechSynthesis.cancel();
+}
+function jump(i) {
+  const was = playing;
+  pause();
+  idx = i;
+  loadParts();
+  mark();
+  if (was) play();
+}
+playBtn.addEventListener("click", () => {
+  if (playing) pause();
+  else play();
+});
+function setRate(n) {
+  rate = n;
+  paintRate();
+  if (!playing) return;
+  const wasPart = part;
+  pause();
+  part = wasPart;
+  play();
+}
+r1.addEventListener("click", () => setRate(1));
+r2.addEventListener("click", () => setRate(2));
+speechSynthesis.getVoices();
+window.speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+  setInterval(() => {
+    if (!playing || !speechSynthesis.speaking) return;
+    speechSynthesis.pause();
+    speechSynthesis.resume();
+  }, 10000);
+}
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && playing) wake();
+});
+paintRate();
+mark();
+document.getElementById("hint").textContent = "Open this in Safari. Play reads each line while that line stays on screen. Tap a line to start there. 1× and 2× set the speed. Keep Safari in front.";
+</script>
+</body>
+</html>
