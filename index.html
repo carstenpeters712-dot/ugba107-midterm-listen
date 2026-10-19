@@ -112,13 +112,24 @@ let playing = false;
 let rate = Number(localStorage.getItem("ugba107-sop-rate") || 1);
 if (rate !== 2) rate = 1;
 let lock = null;
+let seekLock = null;
 
+function center(el) {
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  const topBar = header ? header.getBoundingClientRect().height : 0;
+  const botBar = footer ? footer.getBoundingClientRect().height : 0;
+  const rect = el.getBoundingClientRect();
+  const mid = topBar + (window.innerHeight - topBar - botBar) / 2;
+  const delta = rect.top + rect.height / 2 - mid;
+  window.scrollBy(0, delta);
+}
 function mark() {
   blocks.forEach(el => el.classList.remove("on"));
   const el = blocks[idx];
   if (!el) return;
   el.classList.add("on");
-  el.scrollIntoView({ block: "center", behavior: "smooth" });
+  center(el);
   prog.textContent = (idx + 1) + " / " + items.length;
   localStorage.setItem("ugba107-sop-idx", String(idx));
 }
@@ -139,10 +150,18 @@ function cueAt(time) {
 async function wake() {
   try { if (navigator.wakeLock) lock = await navigator.wakeLock.request("screen"); } catch (e) {}
 }
+function seekTo(start) {
+  seekLock = start;
+  const apply = () => {
+    if (Math.abs((aud.currentTime || 0) - start) > 0.2) aud.currentTime = start;
+  };
+  if (aud.readyState >= 1) apply();
+  else aud.addEventListener("loadedmetadata", apply, { once: true });
+}
 function play() {
-  if (aud.currentTime >= aud.duration - 0.05) {
-    aud.currentTime = 0;
+  if (Number.isFinite(aud.duration) && aud.currentTime >= aud.duration - 0.05) {
     idx = 0;
+    seekTo(0);
   }
   aud.playbackRate = rate;
   playing = true;
@@ -157,16 +176,28 @@ function play() {
   });
 }
 function pause() {
+  seekLock = null;
   playing = false;
   playBtn.textContent = "Play";
   aud.pause();
 }
 function jump(i) {
-  const was = playing;
   idx = i;
-  aud.currentTime = cues[i].start;
   mark();
-  if (was) play();
+  const start = cues[i].start;
+  aud.playbackRate = rate;
+  playing = true;
+  playBtn.textContent = "Pause";
+  wake();
+  const p = aud.play();
+  seekTo(start);
+  aud.addEventListener("playing", () => {
+    if (seekLock === start && Math.abs(aud.currentTime - start) > 0.25) aud.currentTime = start;
+  }, { once: true });
+  if (p && p.catch) p.catch(() => {
+    playing = false;
+    playBtn.textContent = "Play";
+  });
 }
 playBtn.addEventListener("click", () => { if (playing) pause(); else play(); });
 function setRate(n) {
@@ -176,8 +207,22 @@ function setRate(n) {
 r1.addEventListener("click", () => setRate(1));
 r2.addEventListener("click", () => setRate(2));
 aud.addEventListener("timeupdate", () => {
+  if (seekLock != null) {
+    if (Math.abs(aud.currentTime - seekLock) > 0.35) return;
+    seekLock = null;
+  }
   const i = cueAt(aud.currentTime);
   if (i !== idx) { idx = i; mark(); }
+});
+aud.addEventListener("seeked", () => {
+  if (seekLock == null) return;
+  if (Math.abs(aud.currentTime - seekLock) > 0.35) {
+    aud.currentTime = seekLock;
+    return;
+  }
+  seekLock = null;
+  idx = cueAt(aud.currentTime);
+  mark();
 });
 aud.addEventListener("ended", () => {
   playing = false;
@@ -187,13 +232,13 @@ aud.addEventListener("ended", () => {
 });
 aud.addEventListener("play", () => { playing = true; playBtn.textContent = "Pause"; });
 aud.addEventListener("pause", () => {
+  if (seekLock != null) return;
   if (!aud.ended) { playing = false; playBtn.textContent = "Play"; }
 });
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible" && playing) wake();
 });
 paintRate();
-if (cues[idx]) aud.currentTime = cues[idx].start;
 mark();
 document.getElementById("hint").textContent = "Open this in Safari. Play reads the line that is highlighted. Tap a line to jump there. 1× and 2× set the speed. This uses a real audio file, so it plays on a phone.";
 </script>
